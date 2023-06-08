@@ -9,7 +9,7 @@ function App() {
 
   const MainTitle = styled.div` 
     font-size: 30px;
-    text-align: start;
+    text-align: center;
     font-weight: bold;
     color: white;
     background-color: gray;
@@ -20,7 +20,7 @@ function App() {
   
   return (
     <BrowserRouter >
-      <MainTitle>메모장</MainTitle>
+      <MainTitle>Memo List</MainTitle>
       <Routes>
         <Route path='/' element={<MainPage />}/>
       </Routes>
