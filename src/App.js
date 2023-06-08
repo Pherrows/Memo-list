@@ -1,24 +1,30 @@
-import logo from './logo.svg';
-import './App.css';
+import { BrowserRouter, Route, Routes } from "react-router-dom";
+import styled from "styled-components";
+import MainPage from "./component/page/MainPage";
+
 
 function App() {
+
+  
+
+  const MainTitle = styled.div` 
+    font-size: 30px;
+    text-align: start;
+    font-weight: bold;
+    color: white;
+    background-color: gray;
+    padding-left: 10px;
+    border-bottom: 3px solid black;
+  `;
+  
+  
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <BrowserRouter >
+      <MainTitle>메모장</MainTitle>
+      <Routes>
+        <Route path='/' element={<MainPage />}/>
+      </Routes>
+    </BrowserRouter>
   );
 }
 
