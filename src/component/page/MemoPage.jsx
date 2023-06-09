@@ -1,25 +1,76 @@
 import React, { useState } from 'react';
 import styled from 'styled-components';
+import Input from '../input/Input';
+import { useNavigate } from 'react-router-dom';
+import Button from '../button/Button';
+import MemoItems from './MemoItems';
 
-function MemoPage(props) {
+const Wrapper = styled.div`
+	padding: 16px;
+	width: calc(100% - 32px);
+	display: flex;
+	/* flex-direction: column; */
+	align-items: center;
+	justify-content: center;
+  background-color: gray;
+  /* height: 100vb; */
+`;
 
-  const [memo, setMemo] = useState('');
+const Container = styled.div`
+	width: 100%;
+	max-width: 720px;
+  background-color: gray;
 
-  // const {memoPage} = props;
+	& > * {
+		:not(:last-child) {
+			margin-bottom: 16px;
+		}
+	}
+`;
 
-  const Memost = styled.li`
-    width: 100%;
-    height: 100px;
-    border: 1px solid black;
-    background-color: yellow;
-    border-radius: 50px;
-  `;
+function  MemoPage(props) {
+
+	const navigate = useNavigate()
+
+  
+	
+	const [title, setTitle] = useState('');
+	const [content, setContent] = useState('');
+
+  
 
   return (
-    <Memost>
-      
-    </Memost>
+    <Wrapper>
+      <Container>
+				<Input
+					height={20}
+					value={title}
+					onChange={(e) => {
+						setTitle(e.target.value);
+					}}
+				/>
+				<Input 
+					height={580}
+					value={content}
+					onChange={(e) => {
+						setContent(e.target.value);
+					}}
+				/>
+				<Button
+					title='Memo List'
+					onClick={() => {
+						navigate('/')
+					}}
+				/>
+        <Button
+					title='New Memo'
+					onClick={() => {
+						navigate('/')
+            addMemo(title, content);
+					}}
+				/>
+			</Container>
+    </Wrapper>
   );
 }
-
 export default MemoPage;
