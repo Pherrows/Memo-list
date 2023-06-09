@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { memo, useState } from 'react';
 import styled from 'styled-components';
 import { useNavigate } from 'react-router-dom';
 import Button from '../button/Button';
@@ -27,7 +27,7 @@ function MainPage(props) {
       <Button onClick={() => {navigate('/MemoPage')}} title='New Memo'></Button>
       <Button title='Delete'></Button>
     </Main>
-      <MemoItems />
+      <MemoItems  />
     </>
   );
 }

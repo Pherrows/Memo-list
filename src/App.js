@@ -23,8 +23,6 @@ function App() {
       title,
       content
     };
-
-
     setMemo(memo => memo.concat(newMemo));
   };
   
@@ -33,8 +31,8 @@ function App() {
     <BrowserRouter >
       <MainTitle>Memo List</MainTitle>
       <Routes>
-        <Route path='/' element={<MainPage />}/>
-        <Route path="/MemoPage" element={<MemoPage />}/>
+        <Route path='/' element={<MainPage addMemo={addMemo} />}/>
+        <Route path="/MemoPage" element={<MemoPage addMemo={addMemo}/>}/>
       </Routes>
     </BrowserRouter>
   );

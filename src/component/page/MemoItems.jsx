@@ -1,9 +1,9 @@
-import React, { useState } from 'react';
+import React, { memo, useState } from 'react';
 import styled from 'styled-components';
 import MemoPage from './MemoPage';
 import Input from '../input/Input';
 
-function MemoItems(props) {
+function MemoItems({memo}) {
 
   
   

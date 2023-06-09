@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { memo, useState } from 'react';
 import styled from 'styled-components';
 import Input from '../input/Input';
 import { useNavigate } from 'react-router-dom';
@@ -28,7 +28,7 @@ const Container = styled.div`
 	}
 `;
 
-function  MemoPage(props) {
+function  MemoPage({addMemo}) {
 
 	const navigate = useNavigate()
 
@@ -38,7 +38,7 @@ function  MemoPage(props) {
 	const [content, setContent] = useState('');
 
   
-
+	// console.log(addMemo);
   return (
     <Wrapper>
       <Container>
@@ -66,7 +66,7 @@ function  MemoPage(props) {
 					title='New Memo'
 					onClick={() => {
 						navigate('/')
-            addMemo(title, content);
+            addMemo(title);
 					}}
 				/>
 			</Container>
