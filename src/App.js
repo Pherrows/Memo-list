@@ -3,6 +3,7 @@ import styled from "styled-components";
 import MainPage from "./component/page/MainPage";
 import MemoPage from "./component/page/MemoPage";
 import { useState } from "react";
+import MemoItems from "./component/page/MemoItems";
 
 const MainTitle = styled.div` 
   font-size: 30px;
@@ -33,6 +34,8 @@ function App() {
       <Routes>
         <Route path='/' element={<MainPage addMemo={addMemo} />}/>
         <Route path="/MemoPage" element={<MemoPage addMemo={addMemo}/>}/>
+        <Route path="/MemoItems" element={<MemoItems addMemo={addMemo}/>}/>
+
       </Routes>
     </BrowserRouter>
   );
