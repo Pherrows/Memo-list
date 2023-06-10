@@ -11,7 +11,7 @@ const Main = styled.div`
   justify-content: space-between;
 `;
 
-function MainPage({addMemo}) {
+function MainPage(props) {
 
   const navigate = useNavigate();
 
@@ -25,7 +25,7 @@ function MainPage({addMemo}) {
       <Button onClick={() => {navigate('/MemoPage')}} title='New Memo'></Button>
       <Button title='Delete'></Button>
     </Main>
-      <MemoItems  addMemo={addMemo}/>
+      <MemoItems  />
     </>
   );
 }

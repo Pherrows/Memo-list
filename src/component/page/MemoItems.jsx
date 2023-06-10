@@ -5,7 +5,7 @@ import Input from '../input/Input';
 
 function MemoItems(props) {
 
-  
+  const {} = props;
   
   const MemoItems = styled.div`
     background-color: #ffffcc;
