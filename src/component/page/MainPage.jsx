@@ -25,7 +25,7 @@ function MainPage(props) {
       <Button onClick={() => {navigate('/MemoPage')}} title='New Memo'></Button>
       <Button title='Delete'></Button>
     </Main>
-      <MemoItems  />
+      <MemoItems  memo={memo}/>
     </>
   );
 }

@@ -33,8 +33,8 @@ function App() {
       <MainTitle>Memo List</MainTitle>
       <Routes>
         <Route path='/' element={<MainPage addMemo={addMemo} />}/>
-        <Route path="/MemoPage" element={<MemoPage addMemo={addMemo}/>}/>
-        <Route path="/MemoItems" element={<MemoItems addMemo={addMemo}/>}/>
+        <Route path="/MemoPage" element={<MemoPage memo={memo} addMemo={addMemo}/>}/>
+        <Route path="/MemoItems" element={<MemoItems memo={memo} />}/>
 
       </Routes>
     </BrowserRouter>
