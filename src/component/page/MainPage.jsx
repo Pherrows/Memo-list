@@ -12,24 +12,25 @@ const Main = styled.div`
   
 `;
 
-function MainPage(props) {
-  const {addMemo, memo} = props;
+
+
+function MainPage({ addMemo, memo }) {
+  // const {addMemo, memo} = props;
   const navigate = useNavigate();
 
 
   return (
     <>
-    <Main>
-      <Button onClick={() => {navigate('/')}} title='Memo List'></Button>
-      <Button onClick={() => {navigate('/MemoPage')}} title='New Memo'></Button>
-      <Button title='Delete'></Button>
-    </Main>
-    
-      <MemoItems memo={memo}>
-        {memo.map((title) => {
-          return <MemoItems title={title}/>;
-        })}
-      </MemoItems>
+          <Main>
+        <Button onClick={() => {navigate('/')}} title='Memo List' />
+        <Button onClick={() => {navigate('/MemoPage')}} title='New Memo' />
+        <Button title='Delete' />
+      </Main>
+
+      {memo.map((item, index) => (
+        <MemoItems key={index} title={item.title} content={item.content}
+        />
+      ))}
     </>
   );
 }

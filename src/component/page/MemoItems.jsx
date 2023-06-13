@@ -15,19 +15,20 @@ const MemoItemsWrapper = styled.div`
   flex-direction: column;
   z-index: 1;
   font-size: 20px;
+  margin-top: 30px;
+  /* margin-left: 550px; */
 `;
 
-function MemoItems(props) {
+function MemoItems({ title, content }) {
   // console.log(props);
-  const {memo} = props;
+  // const {memo} = props;
   
   console.log(memo);
 
-  // const [memoitem, setMemoitem] = useState();
     
   return (
     <MemoItemsWrapper>
-      
+      <h3>{title}</h3>
     </MemoItemsWrapper>
   );
 
