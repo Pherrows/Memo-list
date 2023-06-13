@@ -9,13 +9,12 @@ const Main = styled.div`
   display: flex;
   width: 100%;
   justify-content: space-between;
+  
 `;
 
 function MainPage(props) {
-
+  const {addMemo, memo} = props;
   const navigate = useNavigate();
-
-  
 
 
   return (
@@ -25,7 +24,12 @@ function MainPage(props) {
       <Button onClick={() => {navigate('/MemoPage')}} title='New Memo'></Button>
       <Button title='Delete'></Button>
     </Main>
-      <MemoItems  memo={memo}/>
+    
+      <MemoItems memo={memo}>
+        {memo.map((title) => {
+          return <MemoItems title={title}/>;
+        })}
+      </MemoItems>
     </>
   );
 }

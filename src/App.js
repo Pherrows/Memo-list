@@ -5,6 +5,8 @@ import MemoPage from "./component/page/MemoPage";
 import { useState } from "react";
 import MemoItems from "./component/page/MemoItems";
 
+
+
 const MainTitle = styled.div` 
   font-size: 30px;
   text-align: center;
@@ -13,12 +15,16 @@ const MainTitle = styled.div`
   background-color: gray;
   padding-left: 10px;
   border-bottom: 3px solid black;
+  /* height: 100vh; */
+  /* z-index: -1; */
 `;
+
+
 
 function App() {
 
   const [memo, setMemo] = useState([]);
-
+  console.log(memo);
   const addMemo = (title, content) => {
     const newMemo = {
       title,
@@ -29,15 +35,16 @@ function App() {
   
   
   return (
+    
     <BrowserRouter >
       <MainTitle>Memo List</MainTitle>
       <Routes>
-        <Route path='/' element={<MainPage addMemo={addMemo} />}/>
+        <Route path='/' element={<MainPage addMemo={addMemo} memo={memo} />}/>
         <Route path="/MemoPage" element={<MemoPage memo={memo} addMemo={addMemo}/>}/>
         <Route path="/MemoItems" element={<MemoItems memo={memo} />}/>
-
       </Routes>
     </BrowserRouter>
+  
   );
 }
 

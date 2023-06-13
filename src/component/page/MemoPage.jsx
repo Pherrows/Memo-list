@@ -37,13 +37,14 @@ function  MemoPage({addMemo}) {
 	const [title, setTitle] = useState('');
 	const [content, setContent] = useState('');
 
-	const handleAddMemo = () => {
+	const handleAddMemo = (e) => {
     addMemo(title, content);
     setTitle('');
     setContent('');
+  
   };
 
-	console.log(title);
+	// console.log(title);
   return (
     <Wrapper>
       <Container>
@@ -69,9 +70,10 @@ function  MemoPage({addMemo}) {
 				/>
         <Button
 					title='New Memo'
-					onClick={() => {
+					onClick={(e) => {
             handleAddMemo()
 						navigate('/')
+						
 					}}
 				/>
 			</Container>
