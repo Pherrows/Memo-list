@@ -3,10 +3,11 @@ import styled from 'styled-components';
 import MemoPage from './MemoPage';
 import Input from '../input/Input';
 import App from '../../App';
+import { useNavigate } from 'react-router-dom';
 
 const MemoItemsWrapper = styled.div`
   background-color: #ffffcc;
-  border-radius: 30px;
+  border-radius: 60px;
   width: 100%;
   height: 100px;
   display: flex;
@@ -22,13 +23,16 @@ const MemoItemsWrapper = styled.div`
 function MemoItems({ title, content }) {
   // console.log(props);
   // const {memo} = props;
-  
-  console.log(memo);
+  const navigate = useNavigate();
+    
+  // console.log(memo);
 
     
   return (
-    <MemoItemsWrapper>
-      <h3>{title}</h3>
+    <MemoItemsWrapper
+      onClick={() => {navigate('/MemoPage')}}
+    >
+      <h3>Title: {title}</h3>
     </MemoItemsWrapper>
   );
 

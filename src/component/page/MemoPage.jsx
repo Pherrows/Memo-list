@@ -69,7 +69,7 @@ function  MemoPage({addMemo}) {
 					}}
 				/>
         <Button
-					title='New Memo'
+					title='Save'
 					onClick={(e) => {
             handleAddMemo()
 						navigate('/')

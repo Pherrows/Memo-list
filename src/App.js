@@ -24,7 +24,7 @@ const MainTitle = styled.div`
 function App() {
 
   const [memo, setMemo] = useState([]);
-  console.log(memo);
+  // console.log(memo);
   const addMemo = (title, content) => {
     const newMemo = {
       title,
@@ -36,7 +36,7 @@ function App() {
   
   return (
     
-    <BrowserRouter >
+    <BrowserRouter  >
       <MainTitle>Memo List</MainTitle>
       <Routes>
         <Route path='/' element={<MainPage addMemo={addMemo} memo={memo} />}/>
