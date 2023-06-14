@@ -20,7 +20,7 @@ const MemoItemsWrapper = styled.div`
   /* margin-left: 550px; */
 `;
 
-function MemoItems({ memo, title, content, index }) {
+function MemoItems({ memo, title, content, index, memoId,  }) {
   // console.log(props);
   // const {memo} = props;
   const navigate = useNavigate();
@@ -30,7 +30,7 @@ function MemoItems({ memo, title, content, index }) {
     
   return (
     <MemoItemsWrapper
-        onClick={() => {navigate(`/MemoPage/:memoId${memo.key}`)}}
+        onClick={() => {navigate(`/MemoPage/:memoId${memoId}`)}}
     >
       <h3>Title: {title}</h3>
     </MemoItemsWrapper>
