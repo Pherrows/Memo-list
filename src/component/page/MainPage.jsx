@@ -29,6 +29,7 @@ function MainPage({ addMemo, memo }) {
 
       {memo.map((item, index) => (
         <MemoItems key={index} title={item.title} content={item.content}
+        
         />
       ))}
     </>
