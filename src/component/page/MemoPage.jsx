@@ -1,7 +1,7 @@
-import React, { memo, useState } from 'react';
+import React, { memo, useEffect, useState } from 'react';
 import styled from 'styled-components';
 import Input from '../input/Input';
-import { useNavigate } from 'react-router-dom';
+import { useNavigate, useParams } from 'react-router-dom';
 import Button from '../button/Button';
 import MemoItems from './MemoItems';
 
@@ -20,7 +20,7 @@ const Container = styled.div`
 	width: 100%;
 	max-width: 720px;
   background-color: gray;
-
+	font-size: 20px;
 	& > * {
 		:not(:last-child) {
 			margin-bottom: 16px;
@@ -28,20 +28,37 @@ const Container = styled.div`
 	}
 `;
 
-function  MemoPage({addMemo}) {
-
-	const navigate = useNavigate()
-
-  
-	
+function  MemoPage({addMemo, memo, amendMemo}) {
 	const [title, setTitle] = useState('');
 	const [content, setContent] = useState('');
 
+	const navigate = useNavigate()
+
+	const {memoId} = useParams();
+
+	useEffect(() => {
+		if (memoId) {
+			const saveMemo = memo.find((m) => {
+				return m.id == memoId;
+			});
+			console.log(saveMemo);
+	
+			setTitle(saveMemo?.title);
+			setContent(saveMemo?.content);
+		}
+	}, []);
+	
+
+
 	const handleAddMemo = (e) => {
-    addMemo(title, content);
+		if (memoId) {
+			amendMemo(title , content)
+		} else {
+			addMemo(title, content);
+		}
     setTitle('');
     setContent('');
-  
+		
   };
 
 	// console.log(title);
@@ -73,7 +90,6 @@ function  MemoPage({addMemo}) {
 					onClick={(e) => {
             handleAddMemo()
 						navigate('/')
-						
 					}}
 				/>
 			</Container>

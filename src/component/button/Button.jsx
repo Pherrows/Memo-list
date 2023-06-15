@@ -15,6 +15,8 @@ function Button(props) {
     align-items: center;
     /* margin-right: 500px; */
     justify-content: center;
+    margin-left: 20px;
+    margin-right: 20px;
   `;
 
   

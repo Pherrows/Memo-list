@@ -23,13 +23,13 @@ function MainPage({ addMemo, memo }) {
     <>
           <Main>
         <Button onClick={() => {navigate('/')}} title='Memo List' />
-        <Button onClick={() => {navigate('/MemoPage')}} title='New Memo' />
+        <Button onClick={() => {navigate('/MemoPage/')}} title='New Memo' />
         <Button title='Delete' />
       </Main>
 
       {memo.map((item, index) => (
         <MemoItems key={index} title={item.title} content={item.content}
-          memoId={index} navigate={navigate}
+          memoId={item.id} navigate={navigate}
         />
       ))}
     </>
