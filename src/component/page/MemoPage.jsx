@@ -51,7 +51,7 @@ function  MemoPage({addMemo, memo, amendMemo}) {
 
 
 	const handleAddMemo = (e) => {
-		if (memoId) {
+		if (memoId == memo) {
 			amendMemo(title , content)
 		} else {
 			addMemo(title, content);
