@@ -8,7 +8,7 @@ import {v4 as uuidv4} from 'uuid'
 
   const MainWrapper = styled.div`
     background-color: gray;
-    height: 100vb;
+    /* height: 100vh; */
     width: 1300px;
     margin: 0 auto;
   `;
@@ -65,9 +65,8 @@ function App() {
     <MainWrapper>
       <MainTitle>Memo List</MainTitle>
       <Routes>
-        <Route path='/' element={<MainPage addMemo={addMemo} memo={memo} handleRemove={handleRemove}/>}/>
-        <Route path="/MemoPage/" element={<MemoPage memo={memo} addMemo={addMemo} amendMemo={amendMemo}/>}/>
-        <Route path="/MemoPage/:memoId" element={<MemoPage memo={memo} addMemo={addMemo} amendMemo={amendMemo}/>}/>
+        <Route path='/' element={<MainPage addMemo={addMemo} memo={memo} handleRemove={handleRemove} />}/>
+        <Route path="/MemoPage/:memoId?" element={<MemoPage memo={memo} addMemo={addMemo} amendMemo={amendMemo} handleRemove={handleRemove}/>}/>
         <Route path="/MemoItems" element={<MemoItems memo={memo} handleRemove={handleRemove} />}/>
       </Routes>
       </MainWrapper>

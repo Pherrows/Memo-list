@@ -56,7 +56,6 @@ function MemoItems({ memo, title, content, index, memoId, handleRemove}) {
 
     const onClick = () => {
       setCheck(!check);
-      
     };
       
       
@@ -68,7 +67,7 @@ function MemoItems({ memo, title, content, index, memoId, handleRemove}) {
           onClick={(e) => {navigate(`/MemoPage/${memoId}`); e.stopPropagation()}}>
         <Title>Title: {title}</Title>
       </MemoItemsWrapper>
-        <Checkbox type='checkbox' onClick={onClick} checked={check}>
+        <Checkbox type='checkbox' onClick={onClick} checked={check} memoId={memoId}>
           {check ? <MdCheckBox /> : <MdCheckBoxOutlineBlank  />}
         </Checkbox>
     </>

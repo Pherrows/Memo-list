@@ -28,7 +28,7 @@ const Container = styled.div`
 	}
 `;
 
-function  MemoPage({addMemo, memo, amendMemo}) {
+function  MemoPage({addMemo, memo, amendMemo, handleRemove}) {
 	const [title, setTitle] = useState('');
 	const [content, setContent] = useState('');
 
@@ -51,14 +51,13 @@ function  MemoPage({addMemo, memo, amendMemo}) {
 
 
 	const handleAddMemo = (e) => {
-		if (memoId == memo) {
+		if (memoId == !memoId) {
 			amendMemo(title , content)
 		} else {
 			addMemo(title, content);
 		}
     setTitle('');
     setContent('');
-		
   };
 
 	// console.log(title);

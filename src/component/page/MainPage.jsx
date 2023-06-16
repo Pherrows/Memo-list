@@ -14,7 +14,7 @@ const Main = styled.div`
 
 
 
-function MainPage({ addMemo, memo, handleRemove }) {
+function MainPage({ addMemo, memo, handleRemove, memoId }) {
   // const {addMemo, memo} = props;
   const navigate = useNavigate();
 
@@ -24,7 +24,7 @@ function MainPage({ addMemo, memo, handleRemove }) {
           <Main>
         <Button onClick={() => {navigate('/')}} title='Memo List' />
         <Button onClick={() => {navigate('/MemoPage/')}} title='New Memo' />
-        <Button onClick={()=> {handleRemove()}} title='Delete'  />
+        <Button onClick={()=> {handleRemove(memoId)}} title='Delete'  />
       </Main>
 
       {memo.map((item, index) => (
